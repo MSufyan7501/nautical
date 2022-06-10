@@ -9,7 +9,10 @@ import {
 } from 'react-native';
 import React from 'react';
 import InputConponent from '../components/InputConponent';
-import {responsiveHeight} from 'react-native-responsive-dimensions';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from 'react-native-responsive-dimensions';
 import FormButton from '../components/FormButton';
 
 const AboutPort = () => {
@@ -21,13 +24,16 @@ const AboutPort = () => {
   ];
   const FACILITIES = [{text: 'Shower'}, {text: 'Toilets'}];
   const PHOTOS = [
-    {index: 0, img: require('../assets/photo1.png')},
-    {index: 1, img: require('../assets/photo2.png')},
+    {img: require('../assets/photo1.png')},
+    {img: require('../assets/photo2.png')},
+    // {img: require('../assets/photo2.png')},
+    // {img: require('../assets/photo2.png')},
+    // {img: require('../assets/photo2.png')},
   ];
   return (
     <View style={styles.MainView}>
       <Text style={{fontSize: 24, fontWeight: '700', color: '#376FCC'}}>
-        Tell About Port{' '}
+        Tell About Port
       </Text>
       {DATA.map((DATA, index) => {
         return (
@@ -49,7 +55,6 @@ const AboutPort = () => {
           );
         })}
       </View>
-
       <InputConponent
         PLACEHOLDER={'Description'}
         MULTI={true}
@@ -61,7 +66,6 @@ const AboutPort = () => {
           borderRadius: 14,
         }}
       />
-
       <Text
         style={{
           fontSize: 16,
@@ -71,21 +75,32 @@ const AboutPort = () => {
         }}>
         Photos
       </Text>
-      <View style={styles.ImgView}>
-        {PHOTOS.map((PHOTOS, index) => {
-          return (
-            <Image
-              style={{
-                height: '85%',
-                width: '30%',
-                borderRadius: 20,
-                marginRight: '4%',
-              }}
-              resizeMode="stretch"
-              source={PHOTOS.img}
-            />
-          );
-        })}
+      <View
+        style={{
+          height: responsiveHeight(10),
+          width: responsiveWidth(90),
+          marginHorizontal: '5%',
+          flexDirection: 'row',
+          backgroundColor: 100,
+        }}>
+        <FlatList
+          data={PHOTOS}
+          horizontal
+          renderItem={({item}) => {
+            return (
+              <Image
+                style={{
+                  height: responsiveHeight(10),
+                  borderRadius: 15,
+                  marginHorizontal: responsiveWidth(1),
+                  width: responsiveWidth(28),
+                }}
+                resizeMode="stretch"
+                source={item.img}
+              />
+            );
+          }}
+        />
         <ImageBackground
           style={{
             height: '92%',
@@ -110,6 +125,59 @@ const AboutPort = () => {
         </ImageBackground>
       </View>
 
+      {/* <View style={styles.ImgView}> */}
+      {/* <ScrollView
+          horizontal
+          pagingEnabled
+          contentContainerStyle={{
+            height: '100%',
+            backgroundColor: 'red',
+            width: '100%',
+            alignItems: 'center',
+          }}>
+          {PHOTOS.map((PHOTOS, index) => {
+            return (
+              <Image
+                style={{
+                  height: '63%',
+                  width: '26%',
+                  borderRadius: 20,
+                  marginRight: '4%',
+                }}
+                resizeMode="stretch"
+                source={PHOTOS.img}
+              />
+            );
+          })}
+        </ScrollView> */}
+      {/* <ScrollView
+          // horizontal
+          contentContainerStyle={{
+            height: '85%',
+            width: '100%',
+            backgroundColor: 100,
+            flexDirection: 'row',
+            alignItems: 'center',
+          }}>
+          <View style={{height: '85%', flexDirection: 'row', width: '30%'}}>
+            {PHOTOS.map((PHOTOS, index) => {
+              return (
+                <Image
+                  style={{
+                    height: '100%',
+                    width: '100%',
+                    borderRadius: 20,
+                    marginRight: '4%',
+                  }}
+                  resizeMode="stretch"
+                  source={PHOTOS.img}
+                />
+              );
+            })}
+          </View>
+        </ScrollView> */}
+      {/*  */}
+      {/* </View> */}
       <FormButton TEXT={'Next'} />
     </View>
   );

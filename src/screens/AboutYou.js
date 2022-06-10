@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const AboutYou = () => {
+const AboutYou = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [
     {img: require(assets + 'user-vector.png'), PLACEHOLDER: 'Name'},
@@ -51,7 +51,7 @@ const AboutYou = () => {
           <View
             style={{
               width: responsiveWidth(90),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -87,6 +87,8 @@ const AboutYou = () => {
               );
             })}
             <FormButton
+              navigation={navigation}
+              ToScreen={'AboutBoat'}
               ButtonStyle={{
                 marginTop: responsiveHeight(4),
               }}

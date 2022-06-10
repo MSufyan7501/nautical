@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const Register = () => {
+const Register = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [
     {img: require(assets + 'email-vector.png'), PLACEHOLDER: 'Email'},
@@ -55,7 +55,7 @@ const Register = () => {
           <View
             style={{
               width: responsiveWidth(90),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -148,7 +148,7 @@ const Register = () => {
             <Text style={{color: '#376FCC', fontWeight: '400', fontSize: 14}}>
               Already have an account?{' '}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Text
                 style={{
                   color: '#ffff',

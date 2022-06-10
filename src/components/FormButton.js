@@ -5,14 +5,23 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const FormButton = ({TEXT, ButtonStyle, TextStyle}) => {
+const FormButton = ({
+  TEXT,
+  navigation,
+  ToScreen,
+  ButtonStyle,
+  DISABLE,
+  TextStyle,
+}) => {
   return (
     <TouchableOpacity
+      onPress={() => navigation.navigate(ToScreen)}
+      // disabled={DISABLE}
       style={[
         {
           height: responsiveHeight(5.5),
           width: responsiveWidth(38),
-          backgroundColor: '#376FCC',
+          backgroundColor: DISABLE ? 'grey' : '#376FCC',
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: 50,
@@ -20,7 +29,11 @@ const FormButton = ({TEXT, ButtonStyle, TextStyle}) => {
         },
         ButtonStyle,
       ]}>
-      <Text style={{fontSize: 16, color: '#FFFFFF', fontWeight: '700'}}>
+      <Text
+        style={[
+          {fontSize: 16, color: '#FFFFFF', fontWeight: '700'},
+          TextStyle,
+        ]}>
         {TEXT}
       </Text>
     </TouchableOpacity>
@@ -28,5 +41,3 @@ const FormButton = ({TEXT, ButtonStyle, TextStyle}) => {
 };
 
 export default FormButton;
-
-const styles = StyleSheet.create({});

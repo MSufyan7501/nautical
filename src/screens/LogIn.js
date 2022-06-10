@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const LogIn = () => {
+const LogIn = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [
     {img: require(assets + 'email-vector.png'), PLACEHOLDER: 'Email'},
@@ -51,7 +51,7 @@ const LogIn = () => {
           <View
             style={{
               width: responsiveWidth(90),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -77,7 +77,25 @@ const LogIn = () => {
                 />
               );
             })}
-            <FormButton TEXT={'Login'} />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('ForgotPassword')}
+              style={{
+                marginHorizontal: '10%',
+                alignSelf: 'flex-end',
+              }}>
+              <Text
+                style={{
+                  fontSize: 13,
+                  color: 'black',
+                }}>
+                Forgot Password
+              </Text>
+            </TouchableOpacity>
+            <FormButton
+              ToScreen={'AboutYou'}
+              navigation={navigation}
+              TEXT={'Login'}
+            />
           </View>
 
           <Text
@@ -130,7 +148,7 @@ const LogIn = () => {
             <Text style={{color: '#376FCC', fontWeight: '400', fontSize: 14}}>
               Don't have an account?{' '}
             </Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('Register')}>
               <Text
                 style={{
                   color: '#ffff',

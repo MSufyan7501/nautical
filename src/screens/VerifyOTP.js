@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const VerifyOTP = () => {
+const VerifyOTP = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [{value: ''}, {value: ''}, {value: ''}, {value: ''}];
   return (
@@ -49,7 +49,7 @@ const VerifyOTP = () => {
             style={{
               width: responsiveWidth(90),
               height: responsiveHeight(36),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -97,7 +97,11 @@ const VerifyOTP = () => {
                 );
               })}
             </View>
-            <FormButton TEXT={'Verify OTP'} />
+            <FormButton
+              navigation={navigation}
+              ToScreen={'ResetPassword'}
+              TEXT={'Verify OTP'}
+            />
             <Text
               style={{
                 fontSize: 12,

@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const ForgotPassword = () => {
+const ForgotPassword = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [
     {img: require(assets + 'email-vector.png'), PLACEHOLDER: 'Email'},
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
             style={{
               width: responsiveWidth(90),
               height: responsiveHeight(36),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -71,7 +71,11 @@ const ForgotPassword = () => {
               Forgot Password
             </Text>
             <InputConponent PLACEHOLDER={'Email/Phone Number'} />
-            <FormButton TEXT={'Send OTP'} />
+            <FormButton
+              navigation={navigation}
+              ToScreen={'VerifyOTP'}
+              TEXT={'Send OTP'}
+            />
             <Text
               style={{
                 fontSize: 12,

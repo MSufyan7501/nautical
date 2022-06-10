@@ -16,7 +16,7 @@ import {
 import InputConponent from '../components/InputConponent';
 import FormButton from '../components/FormButton';
 
-const AboutBoat = () => {
+const AboutBoat = ({navigation}) => {
   const assets = '../assets/';
   const DATA = [
     {
@@ -70,7 +70,7 @@ const AboutBoat = () => {
           <View
             style={{
               width: responsiveWidth(90),
-              backgroundColor: 'pink',
+              backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
@@ -98,6 +98,8 @@ const AboutBoat = () => {
               );
             })}
             <FormButton
+              navigation={navigation}
+              ToScreen={'UploadDocs'}
               ButtonStyle={{
                 marginTop: responsiveHeight(4),
               }}

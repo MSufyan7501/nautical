@@ -11,6 +11,7 @@ const InputConponent = ({
   IconRight,
   IMG,
   MULTI,
+  Editable,
 }) => {
   return (
     <View
@@ -20,7 +21,7 @@ const InputConponent = ({
           width: '90%',
           marginVertical: responsiveHeight(1),
           height: responsiveHeight(6),
-          backgroundColor: 'white',
+          backgroundColor: '#fff',
           justifyContent: 'space-around',
           paddingHorizontal: '2%',
           alignItems: 'center',
@@ -42,8 +43,7 @@ const InputConponent = ({
         autoCapitalize={'none'}
         autoCorrect={false}
         multiline={MULTI}
-        //   maxLength={MAX}
-        //   autoFocus={AUTOFOCUS}
+        editable={Editable}
       />
       {IMG ? (
         <Image
