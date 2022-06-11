@@ -15,7 +15,7 @@ import {
 } from 'react-native-responsive-dimensions';
 import FormButton from '../components/FormButton';
 
-const AboutPort = () => {
+const AboutPort = ({navigation}) => {
   const DATA = [
     {Placeholder: 'Enter Port Name', icon: ''},
     {Placeholder: 'Enter Location', icon: ''},
@@ -24,18 +24,18 @@ const AboutPort = () => {
   ];
   const FACILITIES = [{text: 'Shower'}, {text: 'Toilets'}];
   const PHOTOS = [
-    {img: require('../assets/photo1.png')},
-    {img: require('../assets/photo2.png')},
+    {img: require('../assets/photo1.png'), addphoto: false},
+    {img: require('../assets/photo2.png'), addphoto: false},
     // {img: require('../assets/photo2.png')},
     // {img: require('../assets/photo2.png')},
-    // {img: require('../assets/photo2.png')},
+    {img: require('../assets/addPhoto.png'), addphoto: true},
   ];
   return (
     <View style={styles.MainView}>
       <Text style={{fontSize: 24, fontWeight: '700', color: '#376FCC'}}>
         Tell About Port
       </Text>
-      {DATA.map((DATA, index) => {
+      {DATA.map(DATA => {
         return (
           <InputConponent
             ContaierStyle={styles.inputContainer}
@@ -45,7 +45,7 @@ const AboutPort = () => {
         );
       })}
       <View style={styles.inputContainer}>
-        {FACILITIES.map((data, index) => {
+        {FACILITIES.map(data => {
           return (
             <View style={styles.TagsContainer}>
               <Text style={{fontSize: 14, fontWeight: '300', color: 'white'}}>
@@ -101,28 +101,6 @@ const AboutPort = () => {
             );
           }}
         />
-        <ImageBackground
-          style={{
-            height: '92%',
-            width: '55%',
-            marginTop: '1.5%',
-
-            borderRadius: 20,
-            marginRight: '4%',
-          }}
-          resizeMode="stretch"
-          source={require('../assets/addPhoto.png')}>
-          <Text
-            style={{
-              fontSize: 54,
-              marginHorizontal: '19%',
-              marginVertical: '2.5%',
-              fontWeight: '300',
-              color: '#FFF',
-            }}>
-            +
-          </Text>
-        </ImageBackground>
       </View>
 
       {/* <View style={styles.ImgView}> */}
@@ -178,7 +156,11 @@ const AboutPort = () => {
         </ScrollView> */}
       {/*  */}
       {/* </View> */}
-      <FormButton TEXT={'Next'} />
+      <FormButton
+        navigation={navigation}
+        ToScreen={'BottomStack'}
+        TEXT={'Next'}
+      />
     </View>
   );
 };
@@ -268,3 +250,27 @@ export default AboutPort;
   }}
 />; */
 }
+
+// return item.addphoto ? (
+
+// ) : (
+//   // <ImageBackground
+//   //   style={{
+//   //     height: '100%',
+//   //     width: '55%',
+//   //     borderRadius: 20,
+//   //     marginRight: '4%',
+//   //   }}
+//   //   resizeMode="stretch"
+//   //   source={require('../assets/addPhoto.png')}>
+//   //   <Text
+//   //     style={{
+//   //       fontSize: 54,
+//   //       marginHorizontal: '19%',
+//   //       marginVertical: '2.5%',
+//   //       fontWeight: '300',
+//   //       color: '#FFF',
+//   //     }}>
+//   //     +
+//   //   </Text>
+//   // </ImageBackground>

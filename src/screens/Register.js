@@ -81,7 +81,11 @@ const Register = ({navigation}) => {
                 />
               );
             })}
-            <FormButton TEXT={'Register'} />
+            <FormButton
+              navigation={navigation}
+              ToScreen={'AboutYou'}
+              TEXT={'Register'}
+            />
             {/* <TouchableOpacity
               style={{
                 height: responsiveHeight(5.5),

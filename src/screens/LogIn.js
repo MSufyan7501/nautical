@@ -92,7 +92,7 @@ const LogIn = ({navigation}) => {
               </Text>
             </TouchableOpacity>
             <FormButton
-              ToScreen={'AboutYou'}
+              ToScreen={'BottomStack'}
               navigation={navigation}
               TEXT={'Login'}
             />

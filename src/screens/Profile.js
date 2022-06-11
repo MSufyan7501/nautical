@@ -116,14 +116,19 @@ const Profile = () => {
           source={require('../assets/about-you-ellipse.png')}
         />
       </View>
+
       <Image
         source={require('../assets/Union.png')}
         style={{
+          position: 'absolute',
           flex: 1,
           width: responsiveWidth(100),
-          marginTop: responsiveHeight(16),
+          top: responsiveHeight(9.5),
+          height: responsiveHeight(100),
+          // backgroundColor: 100,
+          // marginTop: responsiveHeight(-5),
         }}
-        resizeMode="cover"
+        resizeMode="contain"
       />
       <View style={styles.contentContainer}>
         <Text style={{fontSize: 19, fontWeight: '700', color: '#376FCC'}}>
@@ -193,9 +198,9 @@ export default Profile;
 
 const styles = StyleSheet.create({
   MainView: {
-    height: '100%',
+    flex: 1,
     backgroundColor: '#376FCC',
-    paddingVertical: responsiveHeight(1.5),
+    paddingTop: responsiveHeight(1.5),
   },
   ImgView: {
     // position: 'absolute',

@@ -6,7 +6,7 @@ import {
 } from 'react-native-responsive-dimensions';
 import FormButton from './FormButton';
 
-const BookingCard = ({Button, Username, IMG, DateFrom, DateTo, Amount}) => {
+const BookingCard = ({Cancel, Username, IMG, DateFrom, DateTo, Amount}) => {
   return (
     <View
       style={{
@@ -144,15 +144,17 @@ const BookingCard = ({Button, Username, IMG, DateFrom, DateTo, Amount}) => {
             ${Amount}
           </Text>
         </View>
-        <FormButton
-          TEXT={'Cancel'}
-          ButtonStyle={{
-            height: responsiveHeight(4),
-            width: responsiveWidth(25),
-            marginBottom: responsiveHeight(1),
-            alignSelf: 'center',
-          }}
-        />
+        {Cancel ? (
+          <FormButton
+            TEXT={'Cancel'}
+            ButtonStyle={{
+              height: responsiveHeight(4),
+              width: responsiveWidth(25),
+              marginBottom: responsiveHeight(1),
+              alignSelf: 'center',
+            }}
+          />
+        ) : null}
       </View>
     </View>
   );

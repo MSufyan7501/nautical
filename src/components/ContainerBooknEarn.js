@@ -16,13 +16,14 @@ const ContainerBooknEarn = ({
   return (
     <View
       style={{
-        elevation: 7,
+        elevation: 4,
         flexDirection: 'row',
         justifyContent: 'space-around',
         backgroundColor: '#fff',
         marginVertical: responsiveHeight(1),
         borderRadius: 16,
         width: '100%',
+        marginHorizontal: '0%',
         paddingVertical: responsiveHeight(1),
         paddingRight: '2%',
       }}>

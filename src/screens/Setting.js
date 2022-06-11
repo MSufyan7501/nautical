@@ -52,7 +52,6 @@ const Setting = () => {
           Nautical Pay V.1.0
         </Text>
       </View>
-      <View style={{height: '3%'}} />
     </View>
   );
 };
@@ -61,23 +60,9 @@ export default Setting;
 
 const styles = StyleSheet.create({
   MainView: {
-    height: '100%',
+    flex: 1,
     backgroundColor: '#376FCC',
-    paddingVertical: responsiveHeight(1.5),
-  },
-  ImgView: {
-    // position: 'absolute',
-    top: responsiveHeight(8),
-    elevation: 9,
-    zIndex: 1,
-    position: 'absolute',
-    height: responsiveHeight(18),
-    alignSelf: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: responsiveWidth(39),
+    paddingTop: responsiveHeight(1.5),
   },
 
   SingleEntryContainer: {

@@ -87,23 +87,34 @@ const BookingDetails = () => {
           style={{
             flex: 1,
             // backgroundColor: 'pink',
-            marginHorizontal: responsiveWidth(4),
           }}>
-          <Text style={{color: '#5F5F5F', fontSize: 18, fontWeight: '700'}}>
+          <Text
+            style={{
+              color: '#5F5F5F',
+              marginHorizontal: responsiveWidth(4),
+              fontSize: 18,
+              fontWeight: '700',
+            }}>
             Bookings
           </Text>
           <FlatList
             data={DATA}
             renderItem={({item}) => {
               return (
-                <ContainerBooknEarn
-                  Username={item.username}
-                  Portname={item.portname}
-                  Img={item.icon}
-                  bookingColor={item.bookColor}
-                  DateFrom={item.start}
-                  DateTo={item.end}
-                />
+                <View
+                  style={{
+                    width: responsiveWidth(90),
+                    alignSelf: 'center',
+                  }}>
+                  <ContainerBooknEarn
+                    Username={item.username}
+                    Portname={item.portname}
+                    Img={item.icon}
+                    bookingColor={item.bookColor}
+                    DateFrom={item.start}
+                    DateTo={item.end}
+                  />
+                </View>
               );
             }}
           />
@@ -119,42 +130,14 @@ const styles = StyleSheet.create({
   MainView: {
     height: '100%',
     backgroundColor: '#376FCC',
-    paddingVertical: responsiveHeight(1.5),
-  },
-  ImgView: {
-    // position: 'absolute',
-    top: responsiveHeight(8),
-    elevation: 9,
-    zIndex: 1,
-    position: 'absolute',
-    height: responsiveHeight(18),
-    alignSelf: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: responsiveWidth(39),
-  },
-
-  SingleEntryContainer: {
-    flexDirection: 'row',
-    borderRadius: 16,
-    backgroundColor: '#C4C4C4',
-    height: responsiveHeight(5.5),
-    marginTop: responsiveHeight(1.5),
-    justifyContent: 'space-around',
-    width: '90%',
-    alignSelf: 'center',
-    alignItems: 'center',
+    paddingTop: responsiveHeight(1.5),
   },
 
   containerFlatlist: {
-    paddingVertical: responsiveHeight(1.5),
+    paddingTop: responsiveHeight(1),
     flex: 1,
     backgroundColor: '#fff',
     borderTopRightRadius: 16,
     borderTopLeftRadius: 16,
-    paddingBottom: '10%',
-    justifyContent: 'space-between',
   },
 });

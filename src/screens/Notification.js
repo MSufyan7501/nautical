@@ -37,7 +37,7 @@ const Notification = () => {
   ];
   return (
     <View style={styles.MainView}>
-      <HeaderComp TEXT={'Notifications'} />
+      <HeaderComp TEXT={'Notifications'} Abs={false} />
       <View style={styles.containerFlatlist}>
         <FlatList
           data={DATA}
@@ -61,10 +61,10 @@ export default Notification;
 
 const styles = StyleSheet.create({
   MainView: {
-    height: '100%',
+    flex: 1,
 
     backgroundColor: '#376FCC',
-    paddingVertical: responsiveHeight(1.5),
+    paddingTop: responsiveHeight(1.5),
   },
   ImgView: {
     // position: 'absolute',
