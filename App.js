@@ -1,7 +1,7 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import RootNavigation from './src/navigation/RootNavigation';
-import AboutPort from './src/screens/AboutPort';
+// import AboutPort from './src/screens/AboutPort';
 
 const App = () => {
   return <RootNavigation />;

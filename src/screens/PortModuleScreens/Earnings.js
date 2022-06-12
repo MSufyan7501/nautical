@@ -7,20 +7,20 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import LineChart from 'react-native-line-chart';
+// import LineChart from 'react-native-line-chart';
 // import {LineChart} from 'react-native-responsive-linechart';
 // import LineChart from 'react-native-responsive-linechart';
-import ContainerBooknEarn from '../components/ContainerBooknEarn';
+import ContainerBooknEarn from '../../components/ContainerBooknEarn';
 
 const Earnings = () => {
   const DATA = [
     {
-      icon: require('../assets/user1.png'),
+      icon: require('../../assets/user1.png'),
       username: 'Username',
       portname: 'Portname',
       bookColor: '#FFD8AB',
@@ -28,7 +28,7 @@ const Earnings = () => {
       end: '10-July-2022',
     },
     {
-      icon: require('../assets/user1.png'),
+      icon: require('../../assets/user1.png'),
       username: 'Username',
       portname: 'Portname',
       bookColor: '#AFC6EB',
@@ -64,7 +64,7 @@ const Earnings = () => {
     <View style={styles.MainView}>
       <HeaderComp TEXT={'Booking Details'} />
       <View style={styles.containerFlatlist}>
-        <LineChart style={{flex: 1}} config={config} data={data} />;
+        {/* <LineChart style={{flex: 1}} config={config} data={data} />; */}
         <View
           style={{
             flex: 1,
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   MainView: {
     height: '100%',
     backgroundColor: '#376FCC',
-    paddingVertical: responsiveHeight(1.5),
+    paddingTop: responsiveHeight(1.5),
   },
   ImgView: {
     // position: 'absolute',

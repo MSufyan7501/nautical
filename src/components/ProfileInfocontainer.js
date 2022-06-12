@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
   Image,
   Text,
+  FlatList,
   View,
 } from 'react-native';
 import React from 'react';
@@ -12,11 +13,11 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const ProfileInfocontainer = ({ICON, ITEM, PLACHOLDER, FOOTER}) => {
+const ProfileInfocontainer = ({ICON, PHOTO, ITEM, PLACHOLDER, FOOTER}) => {
   return (
     <View
       style={{
-        height: responsiveHeight(9),
+        height: PHOTO ? responsiveHeight(17) : responsiveHeight(8.5),
         width: responsiveWidth(90),
         alignSelf: 'center',
         marginVertical: responsiveHeight(1),
@@ -44,31 +45,61 @@ const ProfileInfocontainer = ({ICON, ITEM, PLACHOLDER, FOOTER}) => {
           {ITEM}
         </Text>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          width: '90%',
-          marginLeft: '10%',
-        }}>
-        <TextInput
-          style={{width: '80%'}}
-          placeholder={PLACHOLDER}
-          placeholderTextColor={'#000'}
-          editable={false}
-          //   secureTextEntry={ITEM == 'Password' ? console.log('passowrd') : true}
-          secureTextEntry={true}
-          sec
-        />
-        <TouchableOpacity
-          style={{height: '30%', alignSelf: 'center', width: '10%'}}>
-          <Image
-            style={{height: '100%', width: '100%'}}
-            resizeMode="contain"
-            source={require('../assets/editable-vector.png')}
+      {PHOTO ? (
+        <View
+          style={{
+            height: responsiveHeight(10),
+            width: responsiveWidth(90),
+            marginHorizontal: '5%',
+            flexDirection: 'row',
+            marginTop: responsiveHeight(-2),
+          }}>
+          <FlatList
+            data={PHOTO}
+            horizontal
+            renderItem={({item}) => {
+              return (
+                <Image
+                  style={{
+                    height: responsiveHeight(10),
+                    borderRadius: 15,
+                    marginHorizontal: responsiveWidth(1),
+                    width: responsiveWidth(28),
+                  }}
+                  resizeMode="stretch"
+                  source={item.img}
+                />
+              );
+            }}
           />
-        </TouchableOpacity>
-      </View>
+        </View>
+      ) : (
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            width: '90%',
+            marginLeft: '10%',
+          }}>
+          <TextInput
+            style={{width: '80%'}}
+            placeholder={PLACHOLDER}
+            placeholderTextColor={'#000'}
+            editable={false}
+            //   secureTextEntry={ITEM == 'Password' ? console.log('passowrd') : true}
+            secureTextEntry={true}
+            sec
+          />
+          <TouchableOpacity
+            style={{height: '30%', alignSelf: 'center', width: '10%'}}>
+            <Image
+              style={{height: '100%', width: '100%'}}
+              resizeMode="contain"
+              source={require('../assets/editable-vector.png')}
+            />
+          </TouchableOpacity>
+        </View>
+      )}
       {FOOTER ? (
         <View
           style={{

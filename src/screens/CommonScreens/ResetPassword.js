@@ -13,12 +13,12 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import InputConponent from '../components/InputConponent';
-import FormButton from '../components/FormButton';
-import {KeyboardAwareView} from 'react-native-keyboard-aware-view';
+import InputConponent from '../../components/InputConponent';
+import FormButton from '../../components/FormButton';
+// import {KeyboardAwareView} from 'react-native-keyboard-aware-view';
 
 const ResetPassword = ({navigation}) => {
-  const assets = '../assets/';
+  const assets = '../../assets/';
   const DATA = [
     {img: require(assets + 'vector-password.png'), PLACEHOLDER: 'New Password'},
     {

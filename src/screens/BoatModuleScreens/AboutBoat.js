@@ -1,8 +1,8 @@
 import {
   StyleSheet,
-  Image,
+  
   Text,
-  TouchableOpacity,
+  
   ScrollView,
   ImageBackground,
   KeyboardAvoidingView,
@@ -13,11 +13,11 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import InputConponent from '../components/InputConponent';
-import FormButton from '../components/FormButton';
+import InputConponent from '../../components/InputConponent';
+import FormButton from '../../components/FormButton';
 
 const AboutBoat = ({navigation}) => {
-  const assets = '../assets/';
+  const assets = '../../assets/';
   const DATA = [
     {
       img: require(assets + 'sail-vector.png'),

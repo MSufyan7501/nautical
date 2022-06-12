@@ -11,27 +11,29 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import PortButtonComp from '../components/PortButtonComp';
+import PortButtonComp from '../../components/PortButtonComp';
 
-const HomePort = () => {
+const HomePort = ({navigation}) => {
   const DATA = [
     {
-      icon: require('../assets/dollar.png'),
+      icon: require('../../assets/dollar.png'),
       text: 'Earning',
       color: '#1AB1B0',
       amount: '$560',
+      navigate: 'Earning',
     },
     {
-      icon: require('../assets/booking-icon.png'),
+      icon: require('../../assets/booking-icon.png'),
       text: 'Current Booking',
       color: '#FF7544',
       amount: '25',
+      navigate: 'Booking',
     },
   ];
   const FACILITIES = [
-    {text: 'Shower', icon: require('../assets/shower-icon.png')},
-    {text: 'Toilets', icon: require('../assets/toilet-icon.png')},
-    {text: 'Refueling', icon: require('../assets/refueling-icon.png')},
+    {text: 'Shower', icon: require('../../assets/shower-icon.png')},
+    {text: 'Toilets', icon: require('../../assets/toilet-icon.png')},
+    {text: 'Refueling', icon: require('../../assets/refueling-icon.png')},
   ];
 
   return (
@@ -44,6 +46,7 @@ const HomePort = () => {
         {DATA.map(data => {
           return (
             <PortButtonComp
+              OnPRESS={() => navigation.navigate(data.navigate)}
               ICON={data.icon}
               VALUE={data.amount}
               TEXT={data.text}
@@ -85,7 +88,7 @@ const HomePort = () => {
         <Image
           style={{height: '100%', width: '100%'}}
           resizeMode="stretch"
-          source={require('../assets/port-image.png')}
+          source={require('../../assets/port-image.png')}
         />
       </View>
       <View

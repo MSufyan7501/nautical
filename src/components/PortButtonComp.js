@@ -5,9 +5,10 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const PortButtonComp = ({ICON, VALUE, COLOR, TEXT}) => {
+const PortButtonComp = ({ICON, OnPRESS, VALUE, COLOR, TEXT}) => {
   return (
     <TouchableOpacity
+      onPress={OnPRESS}
       style={{
         width: responsiveWidth(43),
         height: responsiveHeight(10),

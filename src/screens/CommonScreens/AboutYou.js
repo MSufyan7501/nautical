@@ -13,12 +13,15 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import InputConponent from '../components/InputConponent';
-import FormButton from '../components/FormButton';
+import InputConponent from '../../components/InputConponent';
+import FormButton from '../../components/FormButton';
 
-const VerifyOTP = ({navigation}) => {
-  const assets = '../assets/';
-  const DATA = [{value: ''}, {value: ''}, {value: ''}, {value: ''}];
+const AboutYou = ({navigation}) => {
+  const assets = '../../assets/';
+  const DATA = [
+    {img: require(assets + 'user-vector.png'), PLACEHOLDER: 'Name'},
+    {img: require(assets + 'phone-vector.png'), PLACEHOLDER: 'Phone Number'},
+  ];
   return (
     <ImageBackground
       source={require(assets + 'background-image.png')}
@@ -48,15 +51,13 @@ const VerifyOTP = ({navigation}) => {
           <View
             style={{
               width: responsiveWidth(90),
-              height: responsiveHeight(36),
               backgroundColor: 'rgba(255,255,255,0.8)',
               //   opacity: 0.6,
 
               borderRadius: 26,
               paddingVertical: responsiveHeight(1.5),
               alignItems: 'center',
-              justifyContent: 'space-between',
-              marginTop: responsiveHeight(9),
+              marginTop: responsiveHeight(4),
             }}>
             <Text
               style={{
@@ -65,59 +66,34 @@ const VerifyOTP = ({navigation}) => {
                 fontWeight: '700',
                 color: '#376FCC',
               }}>
-              Verify OTP
+              About You
             </Text>
-            <View
+            <Image
               style={{
-                flexDirection: 'row',
-                height: '21%',
-                width: '70%',
-
-                alignItems: 'center',
-                justifyContent: 'space-around',
-              }}>
-              {DATA.map((DATA, index) => {
-                return (
-                  <View
-                    style={{
-                      height: '90%',
-                      width: '20%',
-                      backgroundColor: 'white',
-                      borderRadius: 12,
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                    }}>
-                    <Text
-                      style={{
-                        fontSize: 25,
-                        fontWeight: '600',
-                        color: 'black',
-                      }}></Text>
-                  </View>
-                );
-              })}
-            </View>
+                width: '32%',
+                height: responsiveHeight(14),
+                marginVertical: responsiveHeight(0.5),
+              }}
+              resizeMode="contain"
+              source={require(assets + 'about-you-ellipse.png')}
+            />
+            {DATA.map((DATA, index) => {
+              return (
+                <InputConponent
+                  index={index}
+                  PLACEHOLDER={DATA.PLACEHOLDER}
+                  IMG={DATA.img}
+                />
+              );
+            })}
             <FormButton
               navigation={navigation}
-              ToScreen={'ResetPassword'}
-              TEXT={'Verify OTP'}
+              ToScreen={'AboutBoat'}
+              ButtonStyle={{
+                marginTop: responsiveHeight(4),
+              }}
+              TEXT={'Next'}
             />
-            <Text
-              style={{
-                fontSize: 12,
-                fontWeight: '800',
-                color: '#376FCC',
-                textAlign: 'center',
-                paddingHorizontal: '10%',
-                marginBottom: responsiveHeight(1.5),
-                // backgroundColor: 100,
-              }}>
-              Note:
-              <Text style={{fontWeight: '400'}}>
-                {' '}
-                Write Write OTP Sent to your Phone Number
-              </Text>
-            </Text>
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
@@ -141,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default VerifyOTP;
+export default AboutYou;

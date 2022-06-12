@@ -7,30 +7,30 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import FormButton from '../components/FormButton';
-import ProfileInfocontainer from '../components/ProfileInfocontainer';
-import NotificationContainer from '../components/NotificationContainer';
+import FormButton from '../../components/FormButton';
+import ProfileInfocontainer from '../../components/ProfileInfocontainer';
+import NotificationContainer from '../../components/NotificationContainer';
 
 const Notification = () => {
   const DATA = [
     {
-      icon: require('../assets/notification-ellipse.png'),
+      icon: require('../../assets/notification-ellipse.png'),
       date: '7,Nov,22',
       text: 'Waterfront area with sandy beaches, family fun at Wild Wadi Waterpark & beach bars serving seafood.',
     },
     {
-      icon: require('../assets/notification-ellipse.png'),
+      icon: require('../../assets/notification-ellipse.png'),
       date: '7,Nov,22',
       text: 'Notifications about the bookings,Payments, and reservations and updates.',
     },
 
     {
-      icon: require('../assets/notification-ellipse.png'),
+      icon: require('../../assets/notification-ellipse.png'),
       date: '7,Nov,22',
       text: 'Notifications about the bookings,Payments, and reservations and updates.',
     },

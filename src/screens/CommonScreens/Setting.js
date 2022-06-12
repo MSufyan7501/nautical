@@ -7,26 +7,29 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import FormButton from '../components/FormButton';
-import ProfileInfocontainer from '../components/ProfileInfocontainer';
-import NotificationContainer from '../components/NotificationContainer';
+import FormButton from '../../components/FormButton';
+import ProfileInfocontainer from '../../components/ProfileInfocontainer';
+import NotificationContainer from '../../components/NotificationContainer';
 
 const Setting = () => {
   const DATA = [
-    {icon: require('../assets/profile-vector.png'), value: 'Profile Setting'},
-    {icon: require('../assets/sail-vector.png'), value: 'Boat Setting'},
-    {icon: require('../assets/help-vector.png'), value: 'Help & Support'},
-    {icon: require('../assets/privacy-vector.png'), value: 'Privacy Policy'},
     {
-      icon: require('../assets/setting-vector.png'),
+      icon: require('../../assets/profile-vector.png'),
+      value: 'Profile Setting',
+    },
+    {icon: require('../../assets/sail-vector.png'), value: 'Boat Setting'},
+    {icon: require('../../assets/help-vector.png'), value: 'Help & Support'},
+    {icon: require('../../assets/privacy-vector.png'), value: 'Privacy Policy'},
+    {
+      icon: require('../../assets/setting-vector.png'),
       value: 'Application Setting',
     },
-    {icon: require('../assets/logout-vector.png'), value: 'Logout'},
+    {icon: require('../../assets/logout-vector.png'), value: 'Logout'},
   ];
   return (
     <View style={styles.MainView}>
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
   SingleEntryContainer: {
     flexDirection: 'row',
     borderRadius: 16,
-    backgroundColor: '#C4C4C4',
+    backgroundColor: 'rgba(196,196,196,0.4)',
     height: responsiveHeight(5.5),
     marginTop: responsiveHeight(1.5),
     justifyContent: 'space-around',

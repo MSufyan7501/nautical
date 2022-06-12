@@ -13,11 +13,11 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import InputConponent from '../components/InputConponent';
-import FormButton from '../components/FormButton';
+import InputConponent from '../../components/InputConponent';
+import FormButton from '../../components/FormButton';
 
 const ForgotPassword = ({navigation}) => {
-  const assets = '../assets/';
+  const assets = '../../assets/';
   const DATA = [
     {img: require(assets + 'email-vector.png'), PLACEHOLDER: 'Email'},
     {img: require(assets + 'vector-password.png'), PLACEHOLDER: 'Password'},

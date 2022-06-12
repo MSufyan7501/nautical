@@ -7,35 +7,32 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import FormButton from '../components/FormButton';
-import ProfileInfocontainer from '../components/ProfileInfocontainer';
-import NotificationContainer from '../components/NotificationContainer';
-import BookingCard from '../components/BookingCard';
+import BookingCard from '../../components/BookingCard';
 
 const BookingofPort = () => {
   const [Active, setActive] = useState('Current');
   const Current = [
     {
-      icon: require('../assets/user-image.png'),
+      icon: require('../../assets/user-image.png'),
       name: 'Username',
       from: 'July 18,2022',
       to: 'July 18,2022',
       amount: '3750',
     },
     {
-      icon: require('../assets/user-image.png'),
+      icon: require('../../assets/user-image.png'),
       name: 'Username',
       from: 'July 18,2022',
       to: 'July 18,2022',
       amount: '3750',
     },
     {
-      icon: require('../assets/user-image.png'),
+      icon: require('../../assets/user-image.png'),
       name: 'Username',
       from: 'July 18,2022',
       to: 'July 18,2022',
@@ -44,14 +41,14 @@ const BookingofPort = () => {
   ];
   const Past = [
     {
-      icon: require('../assets/user-image.png'),
+      icon: require('../../assets/user-image.png'),
       name: 'Username',
       from: 'July 18,2022',
       to: 'July 18,2022',
       amount: '3750',
     },
     {
-      icon: require('../assets/user-image.png'),
+      icon: require('../../assets/user-image.png'),
       name: 'Username',
       from: 'July 18,2022',
       to: 'July 18,2022',

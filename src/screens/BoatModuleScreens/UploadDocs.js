@@ -14,8 +14,8 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import InputConponent from '../components/InputConponent';
-import FormButton from '../components/FormButton';
+import InputConponent from '../../components/InputConponent';
+import FormButton from '../../components/FormButton';
 import FilePicker from 'react-native-document-picker';
 
 const UploadDocs = ({navigation}) => {
@@ -44,7 +44,7 @@ const UploadDocs = ({navigation}) => {
       console.log(error);
     }
   };
-  const assets = '../assets/';
+  const assets = '../../assets/';
   const DATA = [
     {img: require(assets + 'user-vector.png'), PLACEHOLDER: 'Name'},
     {img: require(assets + 'phone-vector.png'), PLACEHOLDER: 'Phone Number'},
@@ -100,13 +100,13 @@ const UploadDocs = ({navigation}) => {
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/delete-vector.png')}
+                    source={require('../../assets/delete-vector.png')}
                   />
                 ) : (
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/add-doc.png')}
+                    source={require('../../assets/add-doc.png')}
                   />
                 )}
               </TouchableOpacity>
@@ -134,13 +134,13 @@ const UploadDocs = ({navigation}) => {
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/delete-vector.png')}
+                    source={require('../../assets/delete-vector.png')}
                   />
                 ) : (
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/add-doc.png')}
+                    source={require('../../assets/add-doc.png')}
                   />
                 )}
               </TouchableOpacity>
@@ -168,13 +168,13 @@ const UploadDocs = ({navigation}) => {
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/delete-vector.png')}
+                    source={require('../../assets/delete-vector.png')}
                   />
                 ) : (
                   <Image
                     style={{height: '40%', width: '100%'}}
                     resizeMode="contain"
-                    source={require('../assets/add-doc.png')}
+                    source={require('../../assets/add-doc.png')}
                   />
                 )}
               </TouchableOpacity>

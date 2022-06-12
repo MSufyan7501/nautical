@@ -8,12 +8,12 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import InputConponent from '../components/InputConponent';
+import InputConponent from '../../components/InputConponent';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import FormButton from '../components/FormButton';
+import FormButton from '../../components/FormButton';
 
 const AboutPort = ({navigation}) => {
   const DATA = [
@@ -24,18 +24,18 @@ const AboutPort = ({navigation}) => {
   ];
   const FACILITIES = [{text: 'Shower'}, {text: 'Toilets'}];
   const PHOTOS = [
-    {img: require('../assets/photo1.png'), addphoto: false},
-    {img: require('../assets/photo2.png'), addphoto: false},
+    {img: require('../../assets/photo1.png'), addphoto: false},
+    {img: require('../../assets/photo2.png'), addphoto: false},
     // {img: require('../assets/photo2.png')},
     // {img: require('../assets/photo2.png')},
-    {img: require('../assets/addPhoto.png'), addphoto: true},
+    {img: require('../../assets/addPhoto.png'), addphoto: true},
   ];
   return (
     <View style={styles.MainView}>
       <Text style={{fontSize: 24, fontWeight: '700', color: '#376FCC'}}>
         Tell About Port
       </Text>
-      {DATA.map(DATA => {
+      {DATA.map((DATA, index) => {
         return (
           <InputConponent
             ContaierStyle={styles.inputContainer}
@@ -45,7 +45,7 @@ const AboutPort = ({navigation}) => {
         );
       })}
       <View style={styles.inputContainer}>
-        {FACILITIES.map(data => {
+        {FACILITIES.map((data, index) => {
           return (
             <View style={styles.TagsContainer}>
               <Text style={{fontSize: 14, fontWeight: '300', color: 'white'}}>
@@ -81,7 +81,6 @@ const AboutPort = ({navigation}) => {
           width: responsiveWidth(90),
           marginHorizontal: '5%',
           flexDirection: 'row',
-          backgroundColor: 100,
         }}>
         <FlatList
           data={PHOTOS}

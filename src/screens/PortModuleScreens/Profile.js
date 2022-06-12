@@ -7,118 +7,99 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
-import FormButton from '../components/FormButton';
-import ProfileInfocontainer from '../components/ProfileInfocontainer';
+import ProfileInfocontainer from '../../components/ProfileInfocontainer';
 
 const Profile = () => {
   const PersonalDATA = [
     {
-      icon: require('../assets/user-vector.png'),
+      icon: require('../../assets/user-vector.png'),
       item: 'Name',
       placeholder: 'Suneel Manj',
       footer: true,
+      photos: false,
     },
     {
-      icon: require('../assets/user-vector.png'),
+      icon: require('../../assets/user-vector.png'),
       item: 'Email',
       placeholder: 'ABC@gmail.com',
       footer: true,
+      photos: false,
     },
     {
-      icon: require('../assets/user-vector.png'),
+      icon: require('../../assets/user-vector.png'),
       item: 'Phone Number',
       placeholder: '+1 676 054 2358',
       footer: true,
+      photos: false,
     },
     {
-      icon: require('../assets/user-vector.png'),
+      icon: require('../../assets/user-vector.png'),
       item: 'Password',
       placeholder: 'abcsdssd',
       footer: true,
+      photos: false,
     },
   ];
 
   const PortDATA = [
     {
-      icon: require('../assets/user-vector.png'),
-      item: 'Namexx',
-      placeholder: 'Suneel Manj',
+      icon: require('../../assets/port-vector.png'),
+      item: 'Port Name',
+      placeholder: 'XYZ Port',
       footer: true,
+      photos: false,
     },
     {
-      icon: require('../assets/user-vector.png'),
-      item: 'Emailss',
+      icon: require('../../assets/loc-vector.png'),
+      item: 'Location',
+      placeholder: 'xyz corner downtown dubai',
+      footer: true,
+      photos: false,
+    },
+    {
+      icon: require('../../assets/coordinates-vector.png'),
+      item: 'Coordinates',
+      placeholder: '12” 1’ 46.6320” N',
+      footer: true,
+      photos: false,
+    },
+    {
+      icon: require('../../assets/desc-vector.png'),
+      item: 'Description',
+      placeholder: '',
+      footer: true,
+      photos: false,
+    },
+    {
+      icon: require('../../assets/photo-vector.png'),
+      item: 'Photos',
       placeholder: 'ABC@gmail.com',
       footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Phone Number',
-      placeholder: '+1 676 054 2358',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Namexx',
-      placeholder: 'Suneel Manj',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Emailss',
-      placeholder: 'ABC@gmail.com',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Phone Number',
-      placeholder: '+1 676 054 2358',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Namexx',
-      placeholder: 'Suneel Manj',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Emailss',
-      placeholder: 'ABC@gmail.com',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Phone Number',
-      placeholder: '+1 676 054 2358',
-      footer: true,
-    },
-    {
-      icon: require('../assets/user-vector.png'),
-      item: 'Password',
-      placeholder: 'abcsdssd',
-      footer: true,
+      photos: [
+        {img: require('../../assets/photo1.png')},
+        {img: require('../../assets/photo2.png')},
+      ],
     },
   ];
   const [ActivePersonal, setActivePersonal] = useState(true);
   return (
     <View style={styles.MainView}>
-      <HeaderComp TEXT={'Profile'} />
+      <HeaderComp TEXT={'Profiless'} />
       <View style={styles.ImgView}>
         <Image
           style={{height: '108%', marginTop: '3%', width: '104%'}}
           resizeMode="contain"
-          source={require('../assets/about-you-ellipse.png')}
+          source={require('../../assets/about-you-ellipse.png')}
         />
       </View>
 
       <Image
-        source={require('../assets/Union.png')}
+        source={require('../../assets/Union.png')}
         style={{
           position: 'absolute',
           flex: 1,
@@ -185,6 +166,7 @@ const Profile = () => {
                 FOOTER={item.footer}
                 PLACHOLDER={item.placeholder}
                 ITEM={item.item}
+                PHOTO={item.photos}
               />
             );
           }}

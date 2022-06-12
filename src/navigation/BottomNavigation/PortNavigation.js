@@ -2,16 +2,17 @@ import {StyleSheet, Text, Image, View} from 'react-native';
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
-import Notification from '../screens/CommonScreens/Notification';
-import Profile from '../screens/PortModuleScreens/Profile';
-import Setting from '../screens/CommonScreens/Setting';
-import BookingofPort from '../screens/PortModuleScreens/BookingofPort';
+import Notification from '../../screens/CommonScreens/Notification';
+import Profile from '../../screens/PortModuleScreens/Profile';
+import Setting from '../../screens/CommonScreens/Setting';
+import BookingofPort from '../../screens/PortModuleScreens/BookingofPort';
+import PortHomeStack from '../Stacks/PortHomeStack';
 
 const Tab = createBottomTabNavigator();
 
-const BottomTabsNavigation = () => {
+const PortNavigation = () => {
   return (
-    <Tab.Navigator initialRouteName="Profile">
+    <Tab.Navigator initialRouteName="Home">
       <Tab.Screen
         options={{
           tabBarIcon: ({focused}) => (
@@ -22,7 +23,7 @@ const BottomTabsNavigation = () => {
               <Image
                 style={{...styles.icon1, tintColor: focused ? '#376FCC' : null}}
                 resizeMode={'contain'}
-                source={require('../assets/home-active.png')}
+                source={require('../../assets/home-active.png')}
               />
               {focused ? (
                 <Text
@@ -36,7 +37,7 @@ const BottomTabsNavigation = () => {
           tabBarShowLabel: false,
         }}
         name="Home"
-        component={BookingofPort}
+        component={PortHomeStack}
       />
 
       <Tab.Screen
@@ -49,7 +50,7 @@ const BottomTabsNavigation = () => {
               <Image
                 style={{...styles.icon2, tintColor: focused ? '#376FCC' : null}}
                 resizeMode={'contain'}
-                source={require('../assets/notification-icon.png')}
+                source={require('../../assets/notification-icon.png')}
               />
               {focused ? (
                 <Text
@@ -76,7 +77,7 @@ const BottomTabsNavigation = () => {
               <Image
                 style={{...styles.icon3, tintColor: focused ? '#376FCC' : null}}
                 resizeMode={'contain'}
-                source={require('../assets/setting-icon.png')}
+                source={require('../../assets/setting-icon.png')}
               />
               {focused ? (
                 <Text
@@ -103,7 +104,7 @@ const BottomTabsNavigation = () => {
               <Image
                 style={{...styles.icon4, tintColor: focused ? '#376FCC' : null}}
                 resizeMode={'contain'}
-                source={require('../assets/profile-icon.png')}
+                source={require('../../assets/profile-icon.png')}
               />
               {focused ? (
                 <Text
@@ -123,7 +124,7 @@ const BottomTabsNavigation = () => {
   );
 };
 
-export default BottomTabsNavigation;
+export default PortNavigation;
 
 const styles = StyleSheet.create({
   icon1: {
@@ -147,53 +148,3 @@ const styles = StyleSheet.create({
     marginTop: '12%',
   },
 });
-
-//     <Tab.Navigator
-//       initialRouteName="Notification"
-//       screenOptions={{
-//         headerShown: false,
-//         tabBarStyle: {
-//           borderTopLeftRadius: 16,
-//           backgroundColor: 'skyblue',
-//           borderTopRightRadius: 16,
-//           shadowColor: 'black',
-//           shadowOffset: {
-//             width: 0,
-//             height: 10,
-//           },
-//           elevation: 190,
-//           elevation: 90,
-//           position: 'absolute',
-//         },
-//       }}>
-//       <Tab.Screen
-//         name="Home"
-//         component={Earnings}
-
-//         // options={{
-//         //   tabBarIcon: ({focused}) => {
-//         //     <View
-//         //       style={{
-//         //         height: 50,
-//         //         width: 50,
-//         //         alignItems: 'center',
-//         //         justifyContent: 'center',
-//         //         backgroundColor: 100,
-//         //       }}>
-//         //       <Image
-//         //         resizeMode="contain"
-//         //         style={{height: '50%', width: '50%'}}
-//         //         source={require('../assets/email-vector.png')}
-//         //       />
-//         //     </View>;
-//         //   },
-//         // }}
-//       />
-//       <Tab.Screen name="Notification" component={Notification} />
-//       <Tab.Screen name="Settings" component={Setting} />
-//       <Tab.Screen name="Profile" component={Profile} />
-//     </Tab.Navigator>
-//   );
-// };
-
-// export default BottomTabsNavigation;

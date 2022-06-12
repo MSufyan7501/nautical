@@ -7,18 +7,18 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import HeaderComp from '../components/HeaderComp';
+import HeaderComp from '../../components/HeaderComp';
 import {
   responsiveHeight,
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 import {Calendar} from 'react-native-calendars';
-import ContainerBooknEarn from '../components/ContainerBooknEarn';
+import ContainerBooknEarn from '../../components/ContainerBooknEarn';
 
 const BookingDetails = () => {
   const DATA = [
     {
-      icon: require('../assets/user1.png'),
+      icon: require('../../assets/user1.png'),
       username: 'Username',
       portname: 'Portname',
       bookColor: '#FFD8AB',
@@ -26,7 +26,7 @@ const BookingDetails = () => {
       end: '10-July-2022',
     },
     {
-      icon: require('../assets/user1.png'),
+      icon: require('../../assets/user1.png'),
       username: 'Username',
       portname: 'Portname',
       bookColor: '#AFC6EB',
@@ -56,7 +56,7 @@ const BookingDetails = () => {
                   <Image
                     resizeMode="contain"
                     style={{width: '100%', height: '100%'}}
-                    source={require('../assets/user-vector.png')}
+                    source={require('../../assets/user-vector.png')}
                   />
                 </View>
               ) : null,

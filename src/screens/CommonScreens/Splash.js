@@ -5,7 +5,7 @@ import {
   responsiveWidth,
 } from 'react-native-responsive-dimensions';
 
-const assets = '../assets/';
+const assets = '../../assets/';
 
 const Splash = () => {
   return (

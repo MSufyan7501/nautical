@@ -1,14 +1,15 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import LogIn from '../../screens/LogIn';
-import Register from '../../screens/Register';
-import AboutYou from '../../screens/AboutYou';
-import ForgotPassword from '../../screens/ForgotPassword';
-import VerifyOTP from '../../screens/VerifyOTP';
-import ResetPassword from '../../screens/ResetPassword';
-import AboutPort from '../../screens/AboutPort';
+import LogIn from '../../screens/CommonScreens/LogIn';
+import Register from '../../screens/CommonScreens/Register';
+import AboutYou from '../../screens/CommonScreens/AboutYou';
+import ForgotPassword from '../../screens/CommonScreens/ForgotPassword';
+import VerifyOTP from '../../screens/CommonScreens/VerifyOTP';
+import ResetPassword from '../../screens/CommonScreens/ResetPassword';
+import AboutPort from '../../screens/PortModuleScreens/AboutPort';
 import BottomTabsNavigation from '../../navigation/BottomTabsNavigation';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import PortNavigation from '../BottomNavigation/PortNavigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,7 +25,7 @@ const AuthPortUser = () => {
       <Stack.Screen name="AboutYou" component={AboutYou} />
       <Stack.Screen name="AboutBoat" component={AboutPort} />
       <Stack.Screen name="VerifyOTP" component={VerifyOTP} />
-      <Stack.Screen name="BottomStack" component={BottomTabsNavigation} />
+      <Stack.Screen name="BottomStack" component={PortNavigation} />
     </Stack.Navigator>
   );
 };
