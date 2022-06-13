@@ -30,3 +30,19 @@
 // export default DrawerNavigation;
 
 // // const styles = StyleSheet.create({});
+import React from 'react';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import Home from '../screens/BoatModuleScreens/Home';
+import Profile from '../screens/PortModuleScreens/Profile';
+
+const Drawer = createDrawerNavigator();
+
+const DrawerNavigation = () => {
+  return (
+    <Drawer.Navigator>
+      <Drawer.Screen name="Home" component={Home} />
+      <Drawer.Screen name="Profile" component={Profile} />
+    </Drawer.Navigator>
+  );
+};
+export default DrawerNavigation;

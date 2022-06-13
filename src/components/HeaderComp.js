@@ -12,7 +12,7 @@ const HeaderComp = ({TEXT, ICON, Abs}) => {
         flexDirection: 'row',
         backgroundColor: 'tranarent',
         position: Abs ? 'absolute' : 'relative',
-        top: responsiveHeight(1),
+        top: 15,
         height: responsiveHeight(5),
         width: responsiveWidth(100),
         marginBottom: responsiveHeight(1),

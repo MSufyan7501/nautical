@@ -6,7 +6,7 @@ import BottomTabsNavigation from './BottomTabsNavigation';
 import AuthPortUser from './AuthNavigation/AuthPortUser';
 import AuthBoatUser from './AuthNavigation/AuthBoatUser';
 import PortNavigation from './BottomNavigation/PortNavigation';
-// import DrawerNavigation from './DrawerNavigation';
+import DrawerNavigation from './DrawerNavigation';
 
 const RootNavigation = () => {
   return (
@@ -15,7 +15,8 @@ const RootNavigation = () => {
       {/* <AuthBoatUser /> */}
 
       {/* module no 2 navigation*/}
-      <AuthPortUser />
+      {/* <AuthPortUser /> */}
+      <DrawerNavigation />
 
       {/* <AuthNavigation /> */}
       {/* <BottomTabsNavigation /> */}
