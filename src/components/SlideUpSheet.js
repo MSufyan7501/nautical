@@ -8,7 +8,7 @@ import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import CustomMap from './CustomMap';
 //callbacks
 const SlideUpSheet = () => {
-  const snapPoints = useMemo(() => ['1%', '53%', '500%'], []);
+  const snapPoints = useMemo(() => [ '66%', '100%'], []);
   const handleSheetChange = useCallback(index => {
     console.log('handleSheetChange', index);
   }, []);
@@ -47,19 +47,19 @@ const SlideUpSheet = () => {
               <View style={styles.imgView}>
                 <Image
                   style={styles.fimage1}
-                  source={require('../assets/photo1.png')}
+                  source={require('../assets/1.png')}
                 />
                 <Image
                   style={styles.fimage2}
-                  source={require('../assets/photo1.png')}
+                  source={require('../assets/2.png')}
                 />
                 <Image
                   style={styles.fimage3}
-                  source={require('../assets/photo1.png')}
+                  source={require('../assets/3.png')}
                 />
                 <Image
                   style={styles.fimage4}
-                  source={require('../assets/photo1.png')}
+                  source={require('../assets/4.png')}
                 />
               </View>
               <View
@@ -82,7 +82,7 @@ const SlideUpSheet = () => {
                 <View style={styles.showerview}>
                   <Image
                     style={{height: '45%', width: '25%'}}
-                    source={require('../assets/photo1.png')}
+                    source={require('../assets/shower.png')}
                   />
                   <Text
                     style={{color: '#fff', fontSize: 16, marginHorizontal: 5}}>
@@ -92,7 +92,7 @@ const SlideUpSheet = () => {
                 <View style={styles.showerview}>
                   <Image
                     style={{height: '45%', width: '25%'}}
-                    source={require('../assets/photo1.png')}
+                    source={require('../assets/toilet.png')}
                   />
                   <Text
                     style={{color: '#fff', fontSize: 16, marginHorizontal: 9}}>
@@ -102,7 +102,7 @@ const SlideUpSheet = () => {
                 <View style={styles.showerview}>
                   <Image
                     style={{height: '45%', width: '25%'}}
-                    source={require('../assets/photo1.png')}
+                    source={require('../assets/fuel.png')}
                   />
                   <Text
                     style={{color: '#fff', fontSize: 15, marginHorizontal: 5}}>
@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 220,
+    //backgroundColor:'red'
   },
   contentContainer: {
     backgroundColor: 'transparent',
@@ -169,7 +170,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     height: '5%',
-    width: '33%',
+    width: '12%',
+    backgroundColor:'red'
   },
   showerview: {
     //  justifyContent: 'center',
@@ -180,6 +182,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     width: 115,
     paddingLeft: 9,
+    
   },
 });
 export default SlideUpSheet;

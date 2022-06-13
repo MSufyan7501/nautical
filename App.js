@@ -6,8 +6,8 @@ import Home from './src/screens/BoatModuleScreens/Home';
 // import AboutPort from './src/screens/AboutPort';
 
 const App = () => {
-  // return <RootNavigation />;
-  return <Home />;
+  return <RootNavigation />;
+  // return <Home />;
 };
 
 export default App;
