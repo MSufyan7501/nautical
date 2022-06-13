@@ -3,16 +3,23 @@ import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 // import MapHeader from '../Components/Header/MapHeader';
 import {Marker} from 'react-native-maps';
 // import {useNavigation} from '@react-navigation/native';
-import React, {useCallback, useMemo, sheetRef} from 'react';
+import React, {useCallback, useMemo, sheetRef,useState} from 'react';
 import BottomSheet, {BottomSheetScrollView} from '@gorhom/bottom-sheet';
 import CustomMap from './CustomMap';
 //callbacks
-const SlideUpSheet = () => {
-  const snapPoints = useMemo(() => [ '66%', '100%'], []);
+const SlideUpSheet = ({visible}) => {
+
+   
+
+  const snapPoints = useMemo(() => [ '1%','61%', '100%'], []);
   const handleSheetChange = useCallback(index => {
+
     console.log('handleSheetChange', index);
   }, []);
   // const navigation = useNavigation();
+
+  
+
   return (
     <View style={styles.container}>
       {/* <MapHeader onPress={() => navigation.openDrawer()} /> */}
@@ -20,7 +27,7 @@ const SlideUpSheet = () => {
       <View style={styles.container}>
         <BottomSheet
           ref={sheetRef}
-          index={1}
+          index={visible}
           snapPoints={snapPoints}
           onChange={handleSheetChange}>
           <BottomSheetScrollView
@@ -34,11 +41,7 @@ const SlideUpSheet = () => {
               </View>
               <View style={{marginTop: 13}}>
                 <Text
-                  style={{
-                    color: 'black',
-                    fontWeight: '400',
-                    fontSize: 14,
-                    lineHeight: 21,
+                  style={{ color: 'black',fontWeight: '400',fontSize: 14.5,lineHeight: 21,
                   }}>
                   Waterfront area with sand beaches, family fun at Wildy Wadi
                   Waterpark & beach bars searving seafood.
@@ -81,31 +84,31 @@ const SlideUpSheet = () => {
               <View style={styles.borderView}>
                 <View style={styles.showerview}>
                   <Image
-                    style={{height: '45%', width: '25%'}}
+                    style={{height: '40%', width: '20%'}}
                     source={require('../assets/shower.png')}
                   />
                   <Text
-                    style={{color: '#fff', fontSize: 16, marginHorizontal: 5}}>
+                    style={{color: '#fff',  marginHorizontal: 5}}>
                     Shower
                   </Text>
                 </View>
                 <View style={styles.showerview}>
                   <Image
-                    style={{height: '45%', width: '25%'}}
+                    style={{height: '40%', width: '20%'}}
                     source={require('../assets/toilet.png')}
                   />
                   <Text
-                    style={{color: '#fff', fontSize: 16, marginHorizontal: 9}}>
+                    style={{color: '#fff', marginHorizontal: 9}}>
                     Toilets
                   </Text>
                 </View>
                 <View style={styles.showerview}>
                   <Image
-                    style={{height: '45%', width: '25%'}}
+                    style={{height: '40%', width: '20%'}}
                     source={require('../assets/fuel.png')}
                   />
                   <Text
-                    style={{color: '#fff', fontSize: 15, marginHorizontal: 5}}>
+                    style={{color: '#fff', marginHorizontal: 5}}>
                     Refuleing
                   </Text>
                 </View>
@@ -129,7 +132,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 220,
-    //backgroundColor:'red'
+  
   },
   contentContainer: {
     backgroundColor: 'transparent',
@@ -169,19 +172,20 @@ const styles = StyleSheet.create({
   borderView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    height: '5%',
+    height: '4%',
     width: '12%',
-    backgroundColor:'red'
+
   },
   showerview: {
     //  justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
-    borderRadius: 29,
+    borderRadius: 30,
     backgroundColor: '#376FCC',
-    marginRight: 10,
-    width: 115,
-    paddingLeft: 9,
+    marginRight: 11,
+    width: '205%',
+    paddingLeft: 4,
+    height:'90%'
     
   },
 });

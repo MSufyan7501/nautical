@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const CustomMap = () => {
+const CustomMap = ({onPress}) => {
   return (
     <View style={styles.container}>
       <MapView
@@ -25,7 +25,8 @@ const CustomMap = () => {
           longitudeDelta: 0.0121,
         }}>
         <Marker
-          //   onPress={handleSheetChange}
+            // onPress={()=>console.log('vlaue')}
+            onPress={onPress}
           coordinate={{latitude: 38.8341869, longitude: -75.218091}}>
           <Image
             style={{
